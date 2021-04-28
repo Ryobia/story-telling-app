@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Contribution = require('./Story');
 
 class Contribution extends Model {}
 
@@ -12,7 +11,7 @@ Contribution.init(
         primaryKey: true,
         autoIncrement: true
     },
-    Contribution_text: {
+    content: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -28,7 +27,7 @@ Contribution.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'post',
+            model: 'story',
             key: 'id'
         }
     }
