@@ -11,7 +11,7 @@ Contribution.init(
         primaryKey: true,
         autoIncrement: true
     },
-    content: {
+    contribution_text: {
         type: DataTypes.STRING,
         allowNull: false
     },

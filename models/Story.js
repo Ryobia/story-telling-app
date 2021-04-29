@@ -17,7 +17,7 @@ Story.init(
       },
       description: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       beginning: {
         type: DataTypes.STRING,
