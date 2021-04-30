@@ -1,5 +1,5 @@
 const { Model, DataTypes, STRING } = require('sequelize');
-const sequelize = require('../config/connection')
+const sequelize = require('../config/connection');
 
 class Story extends Model {
   static like(body, models) {
