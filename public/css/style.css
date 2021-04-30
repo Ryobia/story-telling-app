@@ -1,227 +1,286 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
-    background: white;
-    --cashmere: #CFC7C3;
-    --dusty-blue: #B6BBBF;
-    --charcaol: #5A5A58;
-    --denim: #737C8D;
-  }
+  background: white;
+  --cashmere: #cfc7c3;
+  --dusty-blue: #b6bbbf;
+  --charcaol: #5a5a58;
+  --denim: #737c8d;
+}
 
 body {
-    background-color: white;
-    font-family: "New Tegomin";
+  background-color: white;
+  font-family: "New Tegomin";
 }
 
 .header {
-    padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: var(--charcaol);
-    color: white;
+  padding: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: var(--charcaol);
+  color: white;
 }
 
 .header h1 {
-    text-align: center;
-    font-size: 48px;
-    font-family: "New Tegomin";
+  text-align: center;
+  font-size: 48px;
+  font-family: "New Tegomin";
 }
 
 a:link {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
-  
+
 a:visited {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
-  
+
 a:hover {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
-  
+
 a:active {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .search-bar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .search-button {
-    border: none;
-    background-color: var(--charcaol);
-    color: white;
-    padding: 2px;
-    margin-top: 8px;
-    margin-right: 8px;
+  border: none;
+  background-color: var(--charcaol);
+  color: white;
+  padding: 2px;
+  margin-top: 8px;
+  margin-right: 8px;
 }
 
 .search-button:hover {
-    background-color: white;
-    color: var(--charcaol);
+  background-color: white;
+  color: var(--charcaol);
 }
 
-.container input[type=text] {
-    float: left;
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
+.container input[type="text"] {
+  float: left;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
 }
 
 .profile-button {
-    background-color: var(--charcaol);
-    color: white;
-    padding-left: 10%;
-    padding-right: 10%;
-    border: none;
-    font-size: 20px;
-    width: 150px;
+  background-color: var(--charcaol);
+  color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+  border: none;
+  font-size: 20px;
+  width: 150px;
 }
 
 .profile-button:hover {
-    background-color: white;
-    color: var(--charcaol);
+  background-color: white;
+  color: var(--charcaol);
 }
 
 #profile-icon {
-    margin-right: 0.5em;
+  margin-right: 0.5em;
 }
-
 
 /* BEGIN homepage.handlebars */
 .container-2 {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
 }
 
 .story-input {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }
 
 #title {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 #story-text {
-    width: 100%;
-    height: 300px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  height: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 /* The checkbox-container */
 .checkbox-container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Create a custom checkbox */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 
 .feed {
-    background-color: var(--cashmere);
-    display: flex;
-    flex-direction: column;
-    flex-grow: 5;
+  background-color: var(--cashmere);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 5;
 }
 
 .my-stories {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center;
 }
 /* END homepage.handlebars  */
 
-
 .footer {
-    padding: 30px;
-    clear: both;
-    text-align: center;
-    color: var(--charcaol);
-    font-family: "New Tegomin";
+  padding: 30px;
+  clear: both;
+  text-align: center;
+  color: var(--charcaol);
+  font-family: "New Tegomin";
 }
 
 .footer h2 {
-    font-size: 20px;
+  font-size: 20px;
+}
+
+.login {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+  border-bottom: #737c8d solid 5px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.login div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.login h5 {
+    font-size: 18px;
+    padding-top: 7px;
+}
+
+.login h4 {
+  width: 100%;
+  background-color: var(--denim);
+  padding: 10px;
+  font-size: 22px;
+}
+
+.login input {
+    height: 30px;
+    border: var(--charcaol) solid 2px;
+}
+
+.login button {
+  padding: 5px;
+  margin-top: 10px;
+  background-color: var(--charcaol);
+  color: var(--cashmere);
+  font-size: 18px;
+}
+
+.login button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.login-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  font-size: 25px;
 }
