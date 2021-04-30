@@ -21,7 +21,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Story,
-        attributes: ['id', 'title', 'description', 'beginning', 'created_at'],
+        attributes: ['id', 'title', 'beginning', 'created_at'],
       },
       {
         model: Contribution,
