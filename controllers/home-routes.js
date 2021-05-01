@@ -4,45 +4,46 @@ const { Story, User, Contribution } = require("../models");
 
 router.get("/", (req, res) => {
   console.log(req.session);
-  Story.findAll({
-    attributes: [
-      "id",
-      "title",
-      "beginning",
-      "created_at",
-      [
-        sequelize.literal(
-          "(SELECT COUNT(*) FROM like WHERE story.id = like.story_id)"
-        ),
-        "like_count",
-      ],
-    ],
-    include: [
-      {
-        model: Contribution,
-        attributes: ["id", "contribution_text", "story_id", "user_id", "created_at"],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
-      {
-        model: User,
-        attributes: ["username"],
-      },
-    ],
-  })
-    .then((dbPostData) => {
-      const stories = dbPostData.map((post) => post.get({ plain: true }));
+  // Story.findAll({
+  //   attributes: [
+  //     "id",
+  //     "title",
+  //     "beginning",
+  //     "created_at",
+  //     [
+  //       sequelize.literal(
+  //         "(SELECT COUNT(*) FROM like WHERE story.id = like.story_id)"
+  //       ),
+  //       "like_count",
+  //     ],
+  //   ],
+  //   include: [
+  //     {
+  //       model: Contribution,
+  //       attributes: ["id", "contribution_text", "story_id", "user_id", "created_at"],
+  //       include: {
+  //         model: User,
+  //         attributes: ["username"],
+  //       },
+  //     },
+  //     {
+  //       model: User,
+  //       attributes: ["username"],
+  //     },
+  //   ],
+  // })
+  //   .then((dbPostData) => {
+  //     const stories = dbPostData.map((post) => post.get({ plain: true }));
       // pass a single post object into the homepage template
+      const stories = [];
       res.render("homepage", { 
         stories,
       loggedIn: req.session.loggedIn });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+    // })
+    // .catch((err) => {
+    //   console.log(err);
+    //   res.status(500).json(err);
+    // });
 });
 
 router.get("/login", (req, res) => {
