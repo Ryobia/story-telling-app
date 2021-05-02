@@ -1,17 +1,25 @@
 <div class="container-2">
 
-    <div class="story-input">
+    <div class="story-input" id="story-input">
 
-        <h2>Start a New Story</h2>
+        <h2 id="display-confirmation">Story Posted!</h2>
 
-        <input id="title" type="text" placeholder="Title...">
+        <div id="input-fields">
 
-        <textarea id="story-text" placeholder="Once Upon a Time..."></textarea>
+            <h2>Start a New Story</h2>
 
-        <label class="checkbox-container">Limit Contributions
-            <input type="checkbox" checked="checked">
-            <span class="checkmark"></span>
-        </label>
+            <input id="title" type="text" placeholder="Title...">
+
+            <textarea id="story-text" placeholder="Once Upon a Time..."></textarea>
+
+            {{!-- <label class="checkbox-container">Limit Contributions
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label> --}}
+
+            <button id="post-story-btn">Post</button>
+        </div>
+        
 
     </div>
 

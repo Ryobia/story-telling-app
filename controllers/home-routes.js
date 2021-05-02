@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
       "title",
       "beginning",
       "created_at",
-      [sequelize.fn("COUNT", sequelize.col("likes.id")),"like_count"]
+      // [sequelize.fn("COUNT", sequelize.col("likes.id")),"like_count"]
     ],
     include: [
       {
