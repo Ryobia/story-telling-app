@@ -198,6 +198,11 @@ a:active {
   transform: rotate(45deg);
 }
 
+#post-story-btn {
+    border: none;
+    width: 100px;
+}
+
 .feed {
   background-color: var(--cashmere);
   display: flex;
