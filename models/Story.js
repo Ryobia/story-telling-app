@@ -1,7 +1,30 @@
 const { Model, DataTypes, STRING } = require('sequelize');
-const sequelize = require('../config/connection')
+const sequelize = require('../config/connection');
 
-class Story extends Model {}
+class Story extends Model {
+  static like(body, models) {
+    return models.Like.create({
+      user_id: body.user_id,
+      story_id: body.story_id
+    }).then(() => {
+      return Story.findOne({
+        where: {
+          id: body.story_id
+        },
+        attributes: [
+          'id',
+          'title',
+          'beginning',
+          'created_at',
+          [
+            sequelize.literal('(SELECT COUNT(*) FROM like WHERE story.id = like.story_id)'),
+            'like_count'
+          ]
+        ]
+      });
+    });
+  }
+}
 
 Story.init(
     {
@@ -14,10 +37,6 @@ Story.init(
       title: {
         type: DataTypes.STRING,
         allowNull: false
-      },
-      description: {
-        type: DataTypes.STRING,
-        allowNull: false,
       },
       beginning: {
         type: DataTypes.STRING,
