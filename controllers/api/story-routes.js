@@ -11,12 +11,8 @@ router.get("/", (req, res) => {
       "title",
       "beginning",
       "created_at",
-      [
-        sequelize.literal(
-          "(SELECT COUNT(*) FROM like WHERE story.id = like.story_id)"
-        ),
-        "like_count",
-      ],
+      [sequelize.fn("COUNT", sequelize.col("likes.id")),"like_count"],
+
     ],
     include: [
       {
@@ -37,6 +33,10 @@ router.get("/", (req, res) => {
         model: User,
         attributes: ["username"],
       },
+      {
+        model: Like,
+        attributes:[],
+      }
     ],
   })
     .then((dbStoryData) => res.json(dbStoryData))
@@ -56,12 +56,8 @@ router.get("/:id", (req, res) => {
       "title",
       "beginning",
       "created_at",
-      [
-        sequelize.literal(
-          "(SELECT COUNT(*) FROM like WHERE story.id = like.story_id)"
-        ),
-        "like_count",
-      ],
+      [sequelize.fn("COUNT", sequelize.col("likes.id")),"like_count"]
+
     ],
     include: [
       {
@@ -82,6 +78,10 @@ router.get("/:id", (req, res) => {
         model: User,
         attributes: ["username"],
       },
+      {
+        model: Like,
+        attributes:[],
+      }
     ],
   })
     .then((dbStoryData) => {
@@ -99,6 +99,12 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   Story.create({
+    // {
+    //   "title": "Story 1",
+    //   "beginning": "Everyone add a word one by one",
+    //   "user_id": 2
+    // }
+
     title: req.body.title,
     beginning: req.body.beginning,
     user_id: req.session.user_id,

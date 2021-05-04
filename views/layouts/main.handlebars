@@ -26,8 +26,13 @@
 
             <div class="profile">
                 <button class="button profile-button">
+                    {{#if loggedIn}}
                     <i class="material-icons" id="profile-icon">person_outline</i>
                     Profile
+                    {{else}}
+                    <i class="material-icons" id="profile-icon">person_outline</i>
+                    Login/Signup
+                    {{/if}}
                 </button>
             </div>
         </div>
@@ -42,7 +47,7 @@
         </p>
     </div>
 
-<script src="/javascript/homepage.js"></script>
+    <script src="/javascript/homepage.js"></script>
 </body>
 
 </html>

@@ -3,14 +3,13 @@ const sequelize = require("../config/connection");
 const { Story, User, Contribution, Like } = require("../models");
 
 router.get("/", (req, res) => {
-  console.log(req.session);
   Story.findAll({
     attributes: [
       "id",
       "title",
       "beginning",
       "created_at",
-      [sequelize.fn("COUNT", sequelize.col("likes.id")),"like_count"]
+      // [sequelize.fn("COUNT", sequelize.col("likes.id")),"like_count"]
     ],
     include: [
       {
@@ -46,11 +45,19 @@ router.get("/", (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect("/profile");
     return;
   }
   res.render("login");
 });
+
+router.get("/profile", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/login");
+    return;
+  }
+  res.render("profile");
+})
 
 router.get('/:id', (req, res) => {
     User.findOne({
