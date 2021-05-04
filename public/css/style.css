@@ -214,13 +214,13 @@ a:active {
   background-color: var(--cashmere);
   display: flex;
   flex-direction: column;
-  flex-grow: 5;
+  flex-grow: 4;
 }
 
 .my-stories {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 2;
   text-align: center;
 }
 /* END homepage.handlebars  */
@@ -534,7 +534,7 @@ a:active {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  width: 40%;
+  width: 100%;
   border-radius: 15px;
   display: flex;
   flex-wrap: wrap;

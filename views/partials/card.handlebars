@@ -3,8 +3,8 @@
     <div class="cardContainer">
       <div class="topRow">
         <div class="storyTitle">
-          <h2>Story #1</h2>
-          <h3>Author Name:</h3>
+          <h2>{{title}}</h2>
+          <h3>Author Name: {{user.username}}</h3>
         </div>
 
         <div class="authorInfo">
@@ -13,20 +13,14 @@
 
         <div class="contributors">
 
-          <h4><b>Number of Contributors</b></h4>
+          <h4><b>Number of Contributors: {{contributions.length}}</b></h4>
 
         </div>
 
       </div>
 
       <div class="bottomRow">
-        <p>Story story story Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio et exercitationem
-          voluptatibus, tempora quas nulla atque suscipit laboriosam corrupti ut veritatis, amet possimus modi
-          consequuntur sed quam, corporis nobis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur
-          rerum atque praesentium amet ratione? Quam nihil quos expedita sequi accusamus laudantium inventore dicta!
-          Vero libero laudantium eveniet, suscipit animi ex. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Repellat quae dolore iste doloremque maxime esse, minima exercitationem eos, hic totam fuga. Et, sint officia.
-          Exercitationem esse quibusdam dolore veniam pariatur.</p>
+        <p>{{beginning}}</p>
 
         <h3 class="commentButton">BUTTON</h3>
       </div>

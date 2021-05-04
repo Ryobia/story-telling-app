@@ -19,16 +19,20 @@
 
             <button id="post-story-btn">Post</button>
         </div>
-        
+
 
     </div>
 
     <div class="feed">
-        <!-- Story Containers Go Here -->
+        {{#each stories as |story|}}
+        {{> card story}}
+        {{/each}}
     </div>
 
     <div class="my-stories">
         <h2>My Stories</h2>
-        <!-- list of my stories goes here -->
+        {{#each userstories as |story|}}
+        {{> mystories story}}
+        {{/each}}
     </div>
 </div>

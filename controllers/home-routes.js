@@ -41,7 +41,11 @@ router.get("/", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+
+    
 });
+
+
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
@@ -59,44 +63,30 @@ router.get("/profile", (req, res) => {
   res.render("profile");
 })
 
-router.get('/:id', (req, res) => {
-    User.findOne({
-      attributes: { exclude: ['password'] },
-      where: {
-        id: req.params.id,
+router.get('/', (req, res) => {
+  User.findOne({
+    attributes: { exclude: ['password'] },
+    where: {
+      id: req.session.id,
+    },
+    include: [
+      {
+        model: Story,
+        attributes: ['id', 'title', 'beginning', 'created_at'],
       },
-      include: [
-        {
-          model: Story,
-          attributes: ['id', 'title', 'beginning', 'created_at'],
-        },
-        {
-          model: Contribution,
-          attributes: ['id', 'contribution_text', 'created_at'],
-          include: {
-            model: Story,
-            attributes: ['title'],
-          },
-        },
-        {
-          model: Story,
-          attributes: ['title'],
-          through: Like,
-          as: 'liked_stories',
-        }
-      ]
-    })
-      .then((dbUserData) => {
-        if (!dbUserData) {
-          res.status(404).json({ message: 'No user found with this id' });
-          return;
-        }
-        res.json(dbUserData);
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
+    ]
+  })
+  .then((dbPostData) => {
+    const userstories = dbPostData.map((post) => post.get({ plain: true }));
+    // pass a single post object into the homepage template
+    res.render("homepage", { 
+      userstories,
+    loggedIn: req.session.loggedIn });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
   });
+});
 
 module.exports = router;

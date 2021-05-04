@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
       "title",
       "beginning",
       "created_at",
-      [sequelize.fn("COUNT", sequelize.col("likes.id")),"like_count"],
+      // [sequelize.fn("COUNT", sequelize.col("likes.id")),"like_count"],
 
     ],
     include: [
@@ -45,6 +45,24 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+// router.get('/:username', (req, res) => {
+//   console.log("works");
+//   Story.findAll({
+//     where: {
+//       user: "Ryobia"
+//     },
+//     attributes: [
+//       'id',
+//       'title',
+//     ]
+//   })
+//   .then((dbStoryData) => res.json(dbStoryData))
+//   .catch((err) => {
+//     console.log(err);
+//     res.status(500).json(err);
+//   });
+// });
 
 router.get("/:id", (req, res) => {
   Story.findOne({

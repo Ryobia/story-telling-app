@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   // check the session
-  if (req.session) {
+  // if (req.session) {
     Contribution.create({
       contribution_text: req.body.contribution_text,
       story_id: req.body.story_id,
@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
         console.log(err);
         res.status(400).json(err);
       });
-  }
+  // }
 });
 
 router.delete('/:id', (req, res) => {
