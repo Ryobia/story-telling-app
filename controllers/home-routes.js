@@ -3,7 +3,6 @@ const sequelize = require("../config/connection");
 const { Story, User, Contribution, Like } = require("../models");
 
 router.get("/", (req, res) => {
-  console.log(req.session);
   Story.findAll({
     attributes: [
       "id",
