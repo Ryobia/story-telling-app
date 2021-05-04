@@ -33,16 +33,20 @@ router.get("/", (req, res) => {
   })
     .then((dbPostData) => {
       const stories = dbPostData.map((post) => post.get({ plain: true }));
+      // let tempobject = {author: 'Garrett'}
+      // let tempobject1 = {contributors: '100'}
       // pass a single post object into the homepage template
       res.render("homepage", { 
         stories,
       loggedIn: req.session.loggedIn });
     })
+      
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
+    
+}); 
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
