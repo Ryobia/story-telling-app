@@ -112,7 +112,13 @@ a:active {
   padding: 10px;
 }
 
+#display-confirmation {
+  padding-top: 150px;
+  text-align: center;
+}
+
 .story-input {
+  width: 20%;
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -139,8 +145,8 @@ a:active {
   box-sizing: border-box;
 }
 
-/* The checkbox-container */
-.checkbox-container {
+/* The checkbox-container
+/* .checkbox-container {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -151,42 +157,42 @@ a:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
+} */
 
 /* Create a custom checkbox */
-.checkmark {
+/* .checkmark {
   position: absolute;
   top: 0;
   left: 0;
   height: 25px;
   width: 25px;
   background-color: #eee;
-}
+} */
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+/* .container:hover input ~ .checkmark {
   background-color: #ccc;
-}
+} */
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+/* .container input:checked ~ .checkmark {
   background-color: #2196f3;
-}
+} */
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+/* .checkmark:after {
   content: "";
   position: absolute;
   display: none;
-}
+} */
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+/* .container input:checked ~ .checkmark:after {
   display: block;
-}
+} */
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+/* .container .checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;
@@ -196,11 +202,12 @@ a:active {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
+} */
 
 #post-story-btn {
-    border: none;
-    width: 100px;
+  border: none;
+  width: 100px;
+  height: 50px;
 }
 
 .feed {
