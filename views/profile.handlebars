@@ -14,18 +14,29 @@
 
     </div>
 
-
-
     <div class="myStoriesCard">
-        <div class="myStoriesHeadline">
-            <img id="book-image" src=".public/images/open-book.png" alt="Open Book">
-            <h1 id="my-stories">My Stories</h1>
+        <div class=myStoriesHeadline>
+            <h1> My Stories</h1>
         </div>
 
         <div class="myStoriesList">
-            <!-- Handlesbars for myStories go here -->
+            <h3>Stories which you have contributed to</h3>
         </div>
-
+ <div class="myStoriesList">
+        {{#if userStories}}
+        {{#each userStories as |story|}}
+        {{> mystories story}}
+        {{/each}}
+        {{/if}}
+    </div>
 
     </div>
+
+
+   
+
+
+
 </div>
+<button id="logout">LOGOUT</button>
+<script src="/javascript/logout.js"></script>

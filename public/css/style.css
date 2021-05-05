@@ -31,22 +31,22 @@ body {
   font-family: "New Tegomin";
 }
 
-a:link {
+h1 a:link {
   color: white;
   text-decoration: none;
 }
 
-a:visited {
+h1 a:visited {
   color: white;
   text-decoration: none;
 }
 
-a:hover {
+h1 a:hover {
   color: white;
   text-decoration: none;
 }
 
-a:active {
+h1 a:active {
   color: white;
   text-decoration: none;
 }
@@ -592,5 +592,7 @@ a:active {
 .storyTitle {
   border-bottom: 15px;
 }
+
+
 
 /* CARD CSS END */
