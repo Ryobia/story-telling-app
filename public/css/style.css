@@ -214,14 +214,28 @@ a:active {
   background-color: var(--cashmere);
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex-grow: 4;
+}
+
+.feed-header {
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  color: var(--charcaol);
+}
+
+#feed-book-image {
+  width: 400px;
+  height: 70px;
 }
 
 .my-stories {
   display: flex;
   flex-direction: column;
-  flex-grow: 2;
   text-align: center;
+  margin: 20px;
+  width: 20%;
 }
 /* END homepage.handlebars  */
 
