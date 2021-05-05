@@ -541,12 +541,16 @@ a:active {
   align-content: flex-start;
 }
 
+
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .cardContainer {
+  margin-top: 10px;
   padding: 2px 16px;
+  width: 100%;
+
 }
 
 .contributors {
@@ -572,6 +576,8 @@ a:active {
 
 .bottomRow {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .topRow {
