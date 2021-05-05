@@ -214,13 +214,13 @@ a:active {
   background-color: var(--cashmere);
   display: flex;
   flex-direction: column;
-  flex-grow: 5;
+  flex-grow: 4;
 }
 
 .my-stories {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 2;
   text-align: center;
 }
 /* END homepage.handlebars  */
@@ -296,3 +296,276 @@ a:active {
   margin-bottom: 50px;
   font-size: 25px;
 }
+
+/* STORY CSS START */
+.storyCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  width: 95%;
+  margin-bottom: 15px;
+}
+
+.storyCard:hover {
+  box-shadow: 12px 12px 12px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contributorCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 100%;
+  flex-direction: row;
+  margin-top: 15px;
+  margin: auto;
+  width: 95%;
+  margin-bottom: 15px;
+}
+
+.contributorCard:hover {
+  box-shadow: 12px 12px 12px 12px rgba(0, 0, 0, 0.2);
+}
+
+.storyContainer {
+  padding: 2px 16px;
+}
+
+.contributors {
+  text-align: right;
+  padding: 2px 16px;
+  display: flex;
+  align-items: right;
+}
+
+.storyBottomRow {
+  display: flex;
+  font-size: 32px;
+}
+
+.storyTopRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.authorInfo {
+  display: flex;
+}
+
+.cardStoryTitle {
+  border-bottom: 15px;
+  font-style: italic;
+}
+
+.contributorCardText {
+  display: flex;
+  justify-content: space-between;
+  font-size: 32px;
+  margin: 15px;
+}
+
+.contributorCardUserName {
+  font-style: italic;
+  font-size: 12px;
+  margin: 15px;
+}
+
+.addToStoryCard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: 100%;
+  flex-direction: row;
+  margin: auto;
+  width: 95%;
+  margin-bottom: 15px;
+}
+
+.addToStoryCard:hover {
+  box-shadow: 12px 12px 12px 12px rgba(0, 0, 0, 0.2);
+}
+
+.addToStoryText {
+  font-style: italic;
+  margin: 15px;
+  margin-bottom: 50px;
+}
+
+.addToStoryTextBox {
+  color: grey;
+  border-radius: 2px;
+  background-color: lightgrey;
+  padding: 15px 20px;
+  margin: auto;
+  width: 90%;
+  height: 80%;
+  transition: 0.5s;
+}
+
+.addToStoryTextBox:focus {
+  border: 5px solid grey;
+  background-color: white;
+}
+
+
+.submitButton {
+  background-color: grey;
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  align-self: flex-end;
+  margin: auto;
+  width: 92.5%;
+  font-size: 32px;
+
+}
+
+.submitButton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* STORY CSS END */
+
+
+
+/* PROFILE CSS START */
+
+.userStoriesPage {
+  display: flex;
+  flex-direction: row;
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  padding: 10%;
+  align-items: center;
+}
+
+#profile-image {
+  height: 100px;
+  width: 100px;
+}
+
+.profileName {
+  font-size: 40px;
+  color: var(--charcaol);
+}
+
+.profileBio {
+  padding-left: 10%;
+  padding-right: 10%;
+  color: var(--charcaol);
+}
+
+
+.myStoriesCard {
+  background-color: var(--cashmere);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 3;
+  margin: 20px 20px 0 20px;
+  padding: 30px;
+}
+
+.myStoriesHeadline {
+  position: relative;
+  text-align: center;
+  color: var(--charcaol);
+}
+
+#book-image {
+  width: 400px;
+  height: 70px;
+}
+
+#my-stories {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* PROFILE CSS END */
+
+
+/* CARD CSS BEGIN */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardContainer {
+  padding: 2px 16px;
+}
+
+.contributors {
+  text-align: right;
+  padding: 2px 16px;
+  display: flex;
+  align-items: right;
+}
+
+.commentButton {
+  background-color: grey;
+  border: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  padding: 25px;
+  border-radius: 15px;
+  align-self: flex-end;
+}
+
+.bottomRow {
+  display: flex;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.authorInfo {
+  display: flex;
+}
+
+.storyTitle {
+  border-bottom: 15px;
+}
+
+/* CARD CSS END */
