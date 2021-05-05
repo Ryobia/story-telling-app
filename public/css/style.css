@@ -469,17 +469,6 @@ h1 a:active {
 }
 
 .profileCard {
-<<<<<<< HEAD
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 25%;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  /* flex-wrap: wrap; */
-  align-content: flex-start;
-  border-bottom: 5px solid;
-=======
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -495,7 +484,6 @@ h1 a:active {
 #profile-image {
   height: 100px;
   width: 100px;
->>>>>>> 3bfa2c8cf479d4339bc7e542b291ad3d4dc69c0c
 }
 
 .profileName {
@@ -504,22 +492,9 @@ h1 a:active {
 }
 
 .profileBio {
-<<<<<<< HEAD
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  align-content: flex-start;
-  float: left;
-
-=======
   padding-left: 10%;
   padding-right: 10%;
   color: var(--charcaol);
->>>>>>> 3bfa2c8cf479d4339bc7e542b291ad3d4dc69c0c
 }
 
 
@@ -534,74 +509,10 @@ h1 a:active {
 }
 
 .myStoriesHeadline {
-<<<<<<< HEAD
-  margin: auto;
-}
-/* The checkbox-container
-/* .checkbox-container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-} */
-
-/* Create a custom checkbox */
-/* .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-} */
-
-/* On mouse-over, add a grey background color */
-/* .container:hover input ~ .checkmark {
-  background-color: #ccc;
-} */
-
-/* When the checkbox is checked, add a blue background */
-/* .container input:checked ~ .checkmark {
-  background-color: #2196f3;
-} */
-
-/* Create the checkmark/indicator (hidden when not checked) */
-/* .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-} */
-
-/* Show the checkmark when checked */
-/* .container input:checked ~ .checkmark:after {
-  display: block;
-} */
-
-/* Style the checkmark/indicator */
-/* .container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-} */
-
-=======
   position: relative;
   text-align: center;
   color: var(--charcaol);
 }
->>>>>>> 3bfa2c8cf479d4339bc7e542b291ad3d4dc69c0c
 
 #book-image {
   width: 400px;
