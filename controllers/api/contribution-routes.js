@@ -21,18 +21,18 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   // check the session
-  if (req.session) {
+  // if (req.session) {
     Contribution.create({
       contribution_text: req.body.contribution_text,
       story_id: req.body.story_id,
-      user_id: req.session.user_id
+      user_id: req.body.user_id
     })
       .then(dbContData => res.json(dbContData))
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
       });
-  }
+  // }
 });
 
 router.delete('/:id', (req, res) => {

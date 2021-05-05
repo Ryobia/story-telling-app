@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  <link rel=“stylesheet” href=“../public/css/style.css”>
     <div class=userStoriesPage>
 
@@ -12,12 +13,25 @@
                 <h2 class="aboutTheAuthor">About the Author</h2>
                 <p class="bioText">lorem ipsum dolor sit amet, consectet lorem lorem ipsum dolor</p>
             </div>
+=======
+<div class=userStoriesPage>
 
+    <div class="profileCard">
+>>>>>>> 3bfa2c8cf479d4339bc7e542b291ad3d4dc69c0c
+
+        <div class="profile-header">
+            <img id="profile-image" src=".public/images/stranger.png" alt="Profile Image">
+            <h1 class="profileName">Ash Ketchum</h1>
         </div>
 
+        <div class="profileBio">
+            <h2 class="aboutTheAuthor">About the Author</h2>
+            <p class="bioText">lorem ipsum dolor sit amet, consectet lorem lorem ipsum dolor</p>
+        </div>
 
+    </div>
 
-        <div class="myStoriesCard">
+        {{!-- <div class="myStoriesCard">
             <div class=myStoriesHeadline>
                 <h1> My Stories</h1>
             </div>
@@ -27,10 +41,20 @@
             </div>
 
 
+        </div> --}}
+
+        {{#if userStories}}
+        {{#each userStories as |story|}}
+        {{> mystories story}}
+        {{/each}}
+        {{/if}}
+
+        <div class="myStoriesList">
+            <!-- Handlesbars for myStories go here -->
         </div>
 
-
-
-
+    
 
     </div>
+    <button id="logout">LOGOUT</button>
+    <script src="/javascript/logout.js" ></script>

@@ -2,24 +2,53 @@ const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Story, User, Contribution, Like } = require("../models");
 
-router.get("/", (req, res) => {
-  console.log(req.session);
-  Story.findAll({
-    attributes: [
-      "id",
-      "title",
-      "beginning",
-      "created_at",
-      // [sequelize.fn("COUNT", sequelize.col("likes.id")),"like_count"]
-    ],
-    include: [
-      {
-        model: Contribution,
-        attributes: ["id", "contribution_text", "story_id", "user_id", "created_at"],
-        include: {
-          model: User,
-          attributes: ["username"],
+router.get("/", async (req, res) => {
+  try {
+    let allStories = (
+      await Story.findAll({
+        attributes: [
+          "id",
+          "title",
+          "beginning",
+          "created_at",
+          // [sequelize.fn("COUNT", sequelize.col("likes.id")),"like_count"]
+        ],
+        include: [
+          {
+            model: Contribution,
+            attributes: [
+              "id",
+              "contribution_text",
+              "story_id",
+              "user_id",
+              "created_at",
+            ],
+            include: {
+              model: User,
+              attributes: ["username"],
+            },
+          },
+          {
+            model: User,
+            attributes: ["username"],
+          },
+          {
+            model: Like,
+            attributes: [],
+          },
+        ],
+      })
+    ).map((post) => post.get({ plain: true }));
+
+    let userStories;
+    if (req.session.loggedIn) {
+      userStories = await Story.findAll({
+        raw: true,
+        attributes: { exclude: ["password"] },
+        where: {
+          user_id: req.session.user_id,
         },
+<<<<<<< HEAD
       },
       {
         model: User,
@@ -47,6 +76,22 @@ router.get("/", (req, res) => {
     });
     
 }); 
+=======
+      });
+    }
+
+    console.log(allStories, userStories);
+    res.render("homepage", {
+      allStories,
+      userStories,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+>>>>>>> 3bfa2c8cf479d4339bc7e542b291ad3d4dc69c0c
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
@@ -56,52 +101,27 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/profile", (req, res) => {
+router.get("/profile", async (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect("/login");
     return;
   }
-  res.render("profile");
-})
-
-router.get('/:id', (req, res) => {
-    User.findOne({
-      attributes: { exclude: ['password'] },
+  try {
+    let userStories = await Story.findAll({
+      raw: true,
       where: {
-        id: req.params.id,
+        user_id: req.session.user_id,
       },
-      include: [
-        {
-          model: Story,
-          attributes: ['id', 'title', 'beginning', 'created_at'],
-        },
-        {
-          model: Contribution,
-          attributes: ['id', 'contribution_text', 'created_at'],
-          include: {
-            model: Story,
-            attributes: ['title'],
-          },
-        },
-        {
-          model: Story,
-          attributes: ['title'],
-          through: Like,
-          as: 'liked_stories',
-        }
-      ]
-    })
-      .then((dbUserData) => {
-        if (!dbUserData) {
-          res.status(404).json({ message: 'No user found with this id' });
-          return;
-        }
-        res.json(dbUserData);
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+    });
+
+    res.render("profile", {
+      userStories,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
