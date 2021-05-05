@@ -94,4 +94,51 @@ router.get("/profile", async (req, res) => {
   }
 });
 
+router.get('/story/:id', (req, res) => {
+  Story.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'title',
+      'beginning',
+      'created_at'
+    ],
+    include: [
+      {
+        model: Contribution,
+        attributes: ['id', 'contribution_text', 'story_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No story found with this id' });
+        return;
+      }
+
+      // serialize the data
+      const story = dbPostData.get({ plain: true });
+
+      // pass data to template
+      res.render('story', {
+         story, 
+         loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 module.exports = router;
