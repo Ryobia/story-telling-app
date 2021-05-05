@@ -48,6 +48,35 @@ router.get("/", async (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
+<<<<<<< HEAD
+      },
+      {
+        model: User,
+        attributes: ["username"],
+      },
+      {
+        model: Like,
+        attributes:[],
+      }
+    ],
+  })
+    .then((dbPostData) => {
+      const stories = dbPostData.map((post) => post.get({ plain: true }));
+      // let tempobject = {author: 'Garrett'}
+      // let tempobject1 = {contributors: '100'}
+      // pass a single post object into the homepage template
+      res.render("homepage", { 
+        stories,
+      loggedIn: req.session.loggedIn });
+    })
+      
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+    
+}); 
+=======
       });
     }
 
@@ -62,6 +91,7 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+>>>>>>> 3bfa2c8cf479d4339bc7e542b291ad3d4dc69c0c
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
