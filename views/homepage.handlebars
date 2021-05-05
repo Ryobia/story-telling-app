@@ -24,6 +24,9 @@
     </div>
 
     <div class="feed">
+        <div class=feed-header>
+            <img id="book-image" src="/images/open-book.png" alt="Open Book">
+        </div>
         {{#each stories as |story|}}
         {{> card story}}
         {{/each}}
