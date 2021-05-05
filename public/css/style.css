@@ -445,86 +445,67 @@ a:active {
 /* PROFILE CSS START */
 
 .userStoriesPage {
-  width: 100%;
-  float: left;
-  padding: 20px;
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: row;
 }
 
 .profileCard {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 25%;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  align-content: flex-start;
-  border-bottom: 5px solid;
+  width: 500px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  padding: 10%;
+  align-items: center;
+}
+
+#profile-image {
+  height: 100px;
+  width: 100px;
 }
 
 .profileName {
-  margin: auto;
+  font-size: 40px;
+  color: var(--charcaol);
 }
 
 .profileBio {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  align-content: flex-start;
-  float: left;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: var(--charcaol);
 }
 
-.aboutTheAuthor {
-  margin: auto;
-  margin-top: 25px;
-  margin-left: 15px;
-  border-bottom: 2px solid;
-}
-
-.bioText {
-  margin: auto;
-  margin-top: 40px;
-  margin-left: 15px;
-}
 
 .myStoriesCard {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 75%;
-  border-radius: 5px;
+  background-color: var(--cashmere);
   display: flex;
   flex-direction: column;
-  /* justify-content: right; */
-  /* flex-wrap: wrap; */
-  /* float: right; */
-  /* align-content: flex-start; */
-  border-bottom: 5px solid;
-  /* margin: auto; */
+  align-items: center;
+  flex-grow: 3;
+  margin: 20px 20px 0 20px;
+  padding: 30px;
 }
 
 .myStoriesHeadline {
-  margin: auto;
+  position: relative;
+  text-align: center;
+  color: var(--charcaol);
 }
 
-.myStoriesList {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 75%;
-  border-radius: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: center;
-  margin: auto;
+#book-image {
+  width: 400px;
+  height: 70px;
 }
 
+#my-stories {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /* PROFILE CSS END */
 
