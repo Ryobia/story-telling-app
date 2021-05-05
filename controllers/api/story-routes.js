@@ -125,7 +125,7 @@ router.post("/", (req, res) => {
 
     title: req.body.title,
     beginning: req.body.beginning,
-    user_id: req.session.user_id,
+    user_id: req.body.user_id,
   })
     .then((dbStoryData) => res.json(dbStoryData))
     .catch((err) => {
