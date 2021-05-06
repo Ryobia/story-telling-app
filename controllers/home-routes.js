@@ -51,7 +51,6 @@ router.get("/", async (req, res) => {
       });
     }
 
-    console.log(allStories, userStories);
     res.render("homepage", {
       allStories,
       userStories,
@@ -120,14 +119,15 @@ router.get('/story/:id', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
+    .then(dbStoryData => {
+      if (!dbStoryData) {
         res.status(404).json({ message: 'No story found with this id' });
         return;
       }
 
       // serialize the data
-      const story = dbPostData.get({ plain: true });
+      const story = dbStoryData.get({ plain: true });
+      console.log(story);
 
       // pass data to template
       res.render('story', {

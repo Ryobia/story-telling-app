@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
     Contribution.create({
       contribution_text: req.body.contribution_text,
       story_id: req.body.story_id,
-      user_id: req.body.user_id
+      user_id: req.session.user_id
     })
       .then(dbContData => res.json(dbContData))
       .catch(err => {

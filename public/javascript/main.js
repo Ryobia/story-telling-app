@@ -7,6 +7,12 @@ document.getElementById("search-button").addEventListener("click", search
   //display results in feed (replace normal story feed)
 );
 
+function goToLogin() {
+  window.location.replace('/login');
+}
+
+document.querySelector(".profile-button").addEventListener('click', goToLogin);
+
 
 //Need a function to run search bar:
 
