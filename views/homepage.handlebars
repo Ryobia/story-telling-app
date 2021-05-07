@@ -4,6 +4,7 @@
 
         <h2 id="display-confirmation">Story Posted!</h2>
 
+    {{#if loggedIn}}
         <form class="story-form" id="input-fields">
 
             <h2>Start a New Story</h2>
@@ -19,7 +20,7 @@
 
             <button type="submit" id="post-story-btn">Post</button>
         </form>
-
+    {{/if}}
 
     </div>
 
