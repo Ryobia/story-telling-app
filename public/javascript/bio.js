@@ -2,9 +2,6 @@ async function bioHandler(event) {
     event.preventDefault();
     const bio = document.querySelector('textarea[name="userBio"]').value.trim();
   
-    const id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
   
     console.log(bio);
     if (bio) {

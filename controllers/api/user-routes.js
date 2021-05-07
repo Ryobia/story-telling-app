@@ -120,8 +120,9 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/', (req, res) => {
-  User.update(req.body, {
-    individualHooks: true,
+  User.update( req.body,
+    {
+      bio: req.body.bio,
     where: {
       id: req.session.user_id,
     },
