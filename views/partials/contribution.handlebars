@@ -1,4 +1,12 @@
-<div>
 
-{{contribution_text}}
+{{#each contributions}}
+<div class="contributorCard">
+    <div class="contributorCardUserName">
+        <h1>{{user.username}}</h1>
+    </div>
+    <div class="contributorCardText">
+        <p>{{contribution_text}}</p>
+    </div>
+
 </div>
+{{/each}}

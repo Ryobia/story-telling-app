@@ -51,7 +51,6 @@ router.get("/", async (req, res) => {
       });
     }
 
-    console.log(allStories, userStories);
     res.render("homepage", {
       allStories,
       userStories,
@@ -84,7 +83,18 @@ router.get("/profile", async (req, res) => {
       },
     });
 
+    let userInfo = await User.findOne({
+      raw: true,
+      attributes: {
+        exclude: ["password"],
+      },
+      where: {
+        id: req.session.user_id,
+      },
+    });
+
     res.render("profile", {
+      userInfo,
       userStories,
       loggedIn: req.session.loggedIn,
     });
@@ -94,48 +104,50 @@ router.get("/profile", async (req, res) => {
   }
 });
 
-router.get('/story/:id', (req, res) => {
+router.get("/story/:id", (req, res) => {
   Story.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
-    attributes: [
-      'id',
-      'title',
-      'beginning',
-      'created_at'
-    ],
+    attributes: ["id", "title", "beginning", "created_at"],
     include: [
       {
         model: Contribution,
-        attributes: ['id', 'contribution_text', 'story_id', 'user_id', 'created_at'],
+        attributes: [
+          "id",
+          "contribution_text",
+          "story_id",
+          "user_id",
+          "created_at",
+        ],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ["username"],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ["username"],
+      },
+    ],
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No story found with this id' });
+    .then((dbStoryData) => {
+      if (!dbStoryData) {
+        res.status(404).json({ message: "No story found with this id" });
         return;
       }
 
       // serialize the data
-      const story = dbPostData.get({ plain: true });
+      const story = dbStoryData.get({ plain: true });
+      console.log(story);
 
       // pass data to template
-      res.render('story', {
-         story, 
-         loggedIn: req.session.loggedIn
+      res.render("story", {
+        story,
+        loggedIn: req.session.loggedIn,
       });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });

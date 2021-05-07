@@ -2,16 +2,7 @@
 
     <div class="profileCard">
 
-        <div class="profile-header">
-            <img id="profile-image" src=".public/images/stranger.png" alt="Profile Image">
-            <h1 class="profileName">Ash Ketchum</h1>
-        </div>
-
-        <div class="profileBio">
-            <h2 class="aboutTheAuthor">About the Author</h2>
-            <p class="bioText">lorem ipsum dolor sit amet, consectet lorem lorem ipsum dolor</p>
-        </div>
-
+       {{> bio userInfo}}
     </div>
 
     <div class="myStoriesCard">
@@ -40,3 +31,4 @@
 </div>
 <button id="logout">LOGOUT</button>
 <script src="/javascript/logout.js"></script>
+<script src="/javascript/bio.js"></script>

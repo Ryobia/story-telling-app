@@ -1,11 +1,30 @@
 async function search(event) {
-  let searchInput = document.querySelector("#search-input").value.trim();
+  event.preventDefault();
+  let searchInput = document.querySelector("#searchInput").value.trim();
 
+  console.log(searchInput);
+
+  
 }
 
-document.getElementById("search-button").addEventListener("click", search 
+
+
+function goToLogin() {
+  window.location.replace('/login');
+}
+
+document.querySelector(".profile-button").addEventListener('click', goToLogin);
+
+
+
+
+
+
+document.querySelector(".search-bar").addEventListener("submit", search 
   //display results in feed (replace normal story feed)
 );
+
+
 
 
 //Need a function to run search bar:
