@@ -1,7 +1,7 @@
 <div class=userStoriesPage>
 
     <div class="profileCard">
-
+        <img id="profile-image" src=".public/images/stranger.png" alt="Profile Image">
        {{> bio userInfo}}
     </div>
 
@@ -14,6 +14,7 @@
             <h3>Stories which you have contributed to</h3>
         </div>
  <div class="myStoriesList">
+        <img id="book-image" src=".public/images/open-book.png" alt="Open Book">
         {{#if userStories}}
         {{#each userStories as |story|}}
         {{> mystories story}}
