@@ -39,5 +39,5 @@
 
 ## Questions
 
-  *If you would like to contact the developer you may do so at their [Email](mailto:ryobia36@gmail.com).
-  To see more from the developer please visit their [Github](https://github.com/Ryobia) profile.
+  
+  To see more from the developers please visit their Github profiles: [Ryobia](https://github.com/Ryobia), [ndahlberg95](https://github.com/ndahlberg95), []()
