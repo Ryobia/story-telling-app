@@ -40,4 +40,4 @@
 ## Questions
 
   
-  To see more from the developers please visit their Github profiles: [Ryobia](https://github.com/Ryobia), [ndahlberg95](https://github.com/ndahlberg95), []()
+  To see more from the developers please visit their Github profiles: [Ryobia](https://github.com/Ryobia), [ndahlberg95](https://github.com/ndahlberg95), [gjspencer22](https://github.com/gjspencer22)
